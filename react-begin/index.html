@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script>
+    const root = document.querySelector("#root")
+    const h3 = React.createElement("h3", {
+        onMouseEnter : () =>console.log("마우스엔터")
+    }, "안녕 난 h3")
+    // createElement("span") -> 태그 이름은 HTML안에 있는것과 동일한 것으로 작성해야함
+    
+    const btn = React.createElement("button", {
+        onClick:()=>console.log("클릭됐지롱")
+    }, "Click me!")
+    const container = React.createElement("div", null, [h3, btn])
+    ReactDOM.render(container, root)
+    
+</script>
+</html>
